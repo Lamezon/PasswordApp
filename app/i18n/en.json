@@ -1,16 +1,25 @@
 {
   "common": {
     "ok": "OK!",
-    "cancel": "Cancel",
-    "back": "Back"
+    "cancel": "Cancelar",
+    "back": "Voltar"
   },
   "errors": {
-    "invalidEmail": "Invalid email address."
+    "invalidEmail": "Email Inválido."
+  },
+  "passwordGenerateScreen": {
+    "back": "Voltar",
+    "generate": "Gerar Nova Senha",
+    "number": "Números",
+    "caps": "Maiúsculos",
+    "alphabet": "Símbolos",
+    "nick": "Apelido",
+    "check": "Verificar Senha"
   },
   "welcomeScreen": {
-    "poweredBy": "POWERED BY IGNITE",
-    "readyForLaunch": "Ready for launch.",
-    "continue": "CONTINUE"
+    "generate": "Gerar Senha",
+    "list": "Listar Senha",
+    "continue": "Continuar"
   },
   "demoScreen": {
     "howTo": "HOW TO",

@@ -13,7 +13,7 @@ import {
 import { color, spacing, typography } from "../../theme"
 import { NavigatorParamList } from "../../navigators"
 
-const bowserLogo = require("./bowser.png")
+const passwordLogo = require("../../../assets/images/password.png")
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
@@ -40,6 +40,11 @@ const HEADER_TITLE: TextStyle = {
 }
 const TITLE_WRAPPER: TextStyle = {
   ...TEXT,
+  marginTop: "20px",
+  textAlign: "center",
+}
+const SUBTITLE_WRAPPER: TextStyle = {
+  ...TEXT,
   textAlign: "center",
 }
 const TITLE: TextStyle = {
@@ -55,12 +60,10 @@ const ALMOST: TextStyle = {
   fontSize: 26,
   fontStyle: "italic",
 }
-const BOWSER: ImageStyle = {
+const LOGO: ImageStyle = {
   alignSelf: "center",
   marginVertical: spacing[5],
-  maxWidth: "100%",
-  width: 343,
-  height: 230,
+  maxWidth: "50%",
 }
 const CONTENT: TextStyle = {
   ...TEXT,
@@ -88,37 +91,36 @@ const FOOTER_CONTENT: ViewStyle = {
 
 export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
   ({ navigation }) => {
-    const nextScreen = () => navigation.navigate("demo")
+    const passGen = () => navigation.navigate("passGen")
+    const listPass = () => navigation.navigate("listPass")
 
     return (
       <View testID="WelcomeScreen" style={FULL}>
         <GradientBackground colors={["#422443", "#281b34"]} />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
           <Text style={TITLE_WRAPPER}>
-            <Text style={TITLE} text="Your new app, " />
-            <Text style={ALMOST} text="almost" />
-            <Text style={TITLE} text="!" />
+            <Text style={TITLE} text="Bem-Vindo ao KeySec" />
           </Text>
-          <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
-          <Image source={bowserLogo} style={BOWSER} />
-          <Text style={CONTENT}>
-            This probably isn't what your app is going to look like. Unless your designer handed you
-            this screen and, in that case, congrats! You're ready to ship.
-          </Text>
-          <Text style={CONTENT}>
-            For everyone else, this is where you'll see a live preview of your fully functioning app
-            using Ignite.
+          <Image source={passwordLogo} style={LOGO} />
+          <Text style={SUBTITLE_WRAPPER}>
+            Aplicativo gerado a partir do Ignite CLI por Matheus Lamezon Faria
           </Text>
         </Screen>
         <SafeAreaView style={FOOTER}>
           <View style={FOOTER_CONTENT}>
             <Button
+              testID="list-screen-button"
+              style={CONTINUE}
+              textStyle={CONTINUE_TEXT}
+              tx="welcomeScreen.list"
+              onPress={listPass}
+            />
+            <Button
               testID="next-screen-button"
               style={CONTINUE}
               textStyle={CONTINUE_TEXT}
-              tx="welcomeScreen.continue"
-              onPress={nextScreen}
+              tx="welcomeScreen.generate"
+              onPress={passGen}
             />
           </View>
         </SafeAreaView>

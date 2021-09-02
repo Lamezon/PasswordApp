@@ -14,7 +14,7 @@
     "caps": "Maiúsculos",
     "alphabet": "Símbolos",
     "nick": "Apelido",
-    "check": "Verificar Senha"
+    "check": "Mostrar Senha"
   },
   "welcomeScreen": {
     "generate": "Gerar Senha",
